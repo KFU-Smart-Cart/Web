@@ -1,0 +1,461 @@
+*{
+    color: white;
+    font-family: georgia;
+}
+
+a{text-decoration: none;}
+
+.Clear{
+clear: both;
+}
+input,textarea,select,option{
+    color: black;
+    font-size: 16px;
+}
+input[type="submit"]{
+color: white;
+}
+.CustomButtonA{
+    text-align: center;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 22px;
+    width: 180px;
+    border-radius: 10px;
+    border: 2px white solid;
+    background-image:url(../Images/Texture2.jpg);
+}
+.CustomButtonA:hover{
+    background-image: url(../Images/Texture1.jpg);
+    color: white;
+}
+input[type="submit"]:hover{
+    background-image: url(../Images/Texture1.jpg);
+    color: black;
+}
+ul{
+list-style: none;
+}
+a:hover{
+color: #CC7F32;
+}
+
+body{
+
+}
+
+#Header{
+background-image:url(../Images/Texture2.jpg);
+
+}
+.HeaderA{
+    margin: 20px;
+    font-size: 24px;
+}
+#LogoDIV{
+    margin-left: 20px;
+    margin-top: 10px;
+    float: left;
+}
+#Logo{
+    width: 200px;
+    height: 150px;
+}
+.li{
+display: inline;
+}
+#Nav{
+    margin-top: 60px;
+    margin-right: 100px;
+    float: right;
+}
+
+
+
+
+#Wrapper{
+    width: 900px;
+    margin: 0 auto;
+    background-color: #002952;
+    background-image:url(../Images/Texture1.jpg);
+}
+
+
+
+
+#Footer{
+	
+margin-bottom: 10px;
+margin-top:50;
+    background-image:url(../Images/Texture2.jpg);
+}
+
+#set1{
+width: 220px;
+    float: left;
+    margin-left: 50px;
+}
+
+#set2{
+width: 220px;
+    float: right;
+    margin-right: 50px;
+}
+.FooterA{
+    font-size: 20px;
+}
+#copyright{
+margin-left: 350px;
+}
+#Social{
+margin-left: 330px;
+}
+
+
+
+
+#LoginContent{
+    margin: 150px 190px;
+    border: 2px white solid;
+    padding-left: 100px;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    background-image:url(../Images/Texture2.jpg);
+    font-size: 18px;
+    width: 400px;
+}
+
+
+
+#CreateEEventInfo{
+    margin-top: 100px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    border: 2px white solid;
+    border-bottom: 1px white solid;
+    padding: 30px;
+    background-image:url(../Images/Texture2.jpg);
+    font-size: 18px;
+}
+
+#EventSubmit{
+margin-left: 100px;
+    font-family: georgia;
+}
+
+#EventReset{
+margin-left: 200px;
+}
+
+#ConactContent{
+margin: 150px 200px;
+    border: 2px white solid;
+        padding: 30px;
+    background-image:url(../Images/Texture2.jpg);
+}
+
+#LoginHeader{
+margin-left: 90px;
+    margin-bottom: 30px;
+    margin-top: 0px;
+}
+#ContactHeader{
+margin-left: 140px;
+}
+#CreateEventHeader{
+margin-left: 180px;
+}
+
+#RegContent{
+    margin: 100px 120px;
+    padding: 90px 70px;
+    border: 2px white solid;
+    background-image:url(../Images/Texture2.jpg);
+    font-size: 18px;
+}
+
+#RegHeader{
+    margin-left: 200px;
+    margin-bottom: 60px;
+    margin-top: 0px;
+}
+#RegSubmit{
+margin-left: 100px;
+}
+#RegReset{
+margin-left: 100px;
+}
+.Table{
+margin-bottom: 50px;
+}
+#Signin{
+margin-left: 100px;
+}
+.AboutUsImg{
+display: inline;
+    float: right;
+    border-radius: 70px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    width: 150px;
+    height: 150px;
+}
+.AboutUsHeaders{
+    float: left;
+    margin-left: 50px
+}
+.AboutUsIntro{
+    padding-top: 30px;
+}
+.AboutUS{
+    margin: 70px 90px;
+    border: 2px white solid;
+    background-image:url(../Images/Texture2.jpg);
+    font-size: 18px;
+}
+.AboutUsInfo{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#EventRegSubmit{
+margin-left: 50px;
+    margin-right: 50px;
+}
+#ContactUsSubmit{
+    margin-left: 25px;
+    margin-right: 45px;
+}
+#SignInBtn{
+margin-left: 65px;
+}
+#CreateESubmit{
+margin-left: 150px;
+    margin-right: 40px;
+    color: white;
+}
+#EventsContent{
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+
+#SearchDiv{
+    padding-top: 30px;
+    padding-bottom: 50px;
+    border: 2px white solid;
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-image:url(../Images/Texture2.jpg);
+}
+#SearchField{
+    width: 220px;
+    margin-right: 15px;
+}
+#SearchBtn{
+    margin-left: 300px;
+}
+#SearchHeader{
+margin-left: 330px;
+    margin-bottom: 50px;
+}
+#EventType{
+margin-right: 15px;
+}
+#SearchDateDiv{
+margin-top: 30px;
+    margin-left: 120px;
+    margin-bottom: 60px;
+}
+#FromDate{
+margin-right: 50px;
+}
+
+
+#CreateEUserInfo {
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 70px;
+    border-bottom: 2px white solid;
+    border-right: 2px white solid;
+    border-left: 2px white solid;
+    padding: 50px;
+    background-image:url(../Images/Texture2.jpg);
+    font-size: 18px;
+}
+
+#OrgInfoTbl {
+    margin-bottom: 70px;
+}
+
+.EndDateTime {
+    
+}
+
+.fade {
+    width: 600px;
+    height: 350px;
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#SearchFieldLabel {
+    margin-left: 40px;
+}
+#WebSiteName {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 30px;
+    font-size: 24px;
+    font-family:cursive;
+}
+#Content {
+    margin-left: 100px;
+    width: 700px;
+    height: 600px;
+    margin-top: 70px;
+    border: 2px white solid;
+    margin-bottom: 70px;
+    background-image: url(../Images/Texture2.jpg)
+}
+
+#EventDescriptionInfo {
+    float: left;
+    width: 350px;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+    display: inline;
+}
+
+#EventLogo {
+    float: right;
+    width: 250px;
+    height: 200px;
+    margin-right: 30px;
+    margin-top: 20px;
+    display: inline;
+}
+
+.EventInfo {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.EventInfoList {
+    list-style:disc;
+}
+
+#RegisterBTN {
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+
+
+#ListEvents {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border: 2px white solid;
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-top: 50px;
+    margin-right: 40px;
+    background-image:url(../Images/Texture2.jpg);
+}
+
+#CurrentEventsHeader {
+    margin-left: 250px;
+    margin-bottom: 50px;
+}
+
+#CurrentEventList {
+    list-style: disc;
+}
+
+#CurrentEventList1 {
+    list-style: disc;
+}
+
+#HomeStats {
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-bottom: 70px;
+    margin-top: 100px;
+    border: 2px white solid;
+    background-image:url(../Images/Texture2.jpg);
+    font-size: 22px;
+    padding-left:10px;
+    padding-bottom: 50px;
+}
+
+#HomeHeader {
+    margin-left: 200px;
+    margin-bottom: 40px;
+}
+
+#PastEventsHeader {
+    margin-left: 280px;
+}
+
+#NotAuthorizedPanel{
+	margin-left: 220px;
+}
+
+#ListEventsPast {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border: 2px white solid;
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-top: 50px;
+    margin-right: 40px;
+    background-image:url(../Images/Texture2.jpg);
+    margin-bottom: 50px;
+}
+
+#NotAuthorizedPanelDIV {
+	    padding-top: 20px;
+    padding-bottom: 40px;
+    border: 2px white solid;
+    border-radius: 5px;
+    margin-left: 40px;
+    margin-top: 200px;
+    margin-right: 40px;
+    background-image:url(../Images/Texture2.jpg);
+    margin-bottom: 200px;
+}
+
+.KFUCCSITLogo {
+    display: inline;
+    float: right;
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+#CantReg {
+    margin-left: 220px;
+}
+
+#EventRegHeader {
+    margin-left: 200px;
+}
+
+
+
+#Dummy {
+    display: block;
+    margin-bottom: 430px;
+}
+
+#Showmore {
+    margin-left: 150px;
+    margin-right:50px;
+}
+#image{
+	color:white;
+}
