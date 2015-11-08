@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.5.0.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2015 at 06:18 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Nov 08, 2015 at 11:34 PM
+-- Server version: 10.0.17-MariaDB
+-- PHP Version: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `cartproject`
@@ -23,14 +23,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ad`
+--
+
+CREATE TABLE `ad` (
+  `Id` int(11) NOT NULL,
+  `Title` varchar(50) NOT NULL,
+  `Description` varchar(255) NOT NULL,
+  `BeaconName` varchar(20) NOT NULL,
+  `UUID` varchar(32) NOT NULL,
+  `Major` int(5) NOT NULL,
+  `Minor` int(5) NOT NULL,
+  `MacAddress` varchar(17) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ad`
+--
+
+INSERT INTO `ad` (`Id`, `Title`, `Description`, `BeaconName`, `UUID`, `Major`, `Minor`, `MacAddress`) VALUES
+(2, 'AD 2 Titel', 'AD 2 Dis', 'mintCold', 'B9407F30F5F8466EAFF925556B57FE6D', 47188, 25260, 'E1:75:62:AC:B8:54'),
+(3, 'AD 3 Titel', 'AD 3 Dis', 'blueberryCold', 'B9407F30F5F8466EAFF925556B57FE6D', 20458, 40609, 'F8:70:9E:A1:4F:EA');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cart`
 --
 
-CREATE TABLE IF NOT EXISTS `cart` (
+CREATE TABLE `cart` (
   `MAC` varchar(100) NOT NULL,
-`ID` int(100) NOT NULL,
+  `ID` int(100) NOT NULL,
   `Status` varchar(25) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `cart`
@@ -46,61 +71,15 @@ INSERT INTO `cart` (`MAC`, `ID`, `Status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
---
-
-CREATE TABLE IF NOT EXISTS `user` (
-  `Username` varchar(100) NOT NULL,
-  `Password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`Username`, `Password`) VALUES
-('Admin', 'Admin@123');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `cart`
---
-ALTER TABLE `cart`
- ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `MAC` (`MAC`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
- ADD PRIMARY KEY (`Username`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `cart`
---
-ALTER TABLE `cart`
-MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;--
--- Database: `cdcol`
---
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `cds`
 --
 
-CREATE TABLE IF NOT EXISTS `cds` (
+CREATE TABLE `cds` (
   `titel` varchar(200) COLLATE latin1_general_ci DEFAULT NULL,
   `interpret` varchar(200) COLLATE latin1_general_ci DEFAULT NULL,
   `jahr` int(11) DEFAULT NULL,
-`id` bigint(20) unsigned NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+  `id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
 -- Dumping data for table `cds`
@@ -111,36 +90,14 @@ INSERT INTO `cds` (`titel`, `interpret`, `jahr`, `id`) VALUES
 ('Goodbye Country (Hello Nightclub)', 'Groove Armada', 2001, 4),
 ('Glee', 'Bran Van 3000', 1997, 5);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `cds`
---
-ALTER TABLE `cds`
- ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `cds`
---
-ALTER TABLE `cds`
-MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;--
--- Database: `phpmyadmin`
---
-
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `pma_bookmark`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_bookmark` (
-`id` int(11) NOT NULL,
+CREATE TABLE `pma_bookmark` (
+  `id` int(11) NOT NULL,
   `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
   `user` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
   `label` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
@@ -153,8 +110,8 @@ CREATE TABLE IF NOT EXISTS `pma_bookmark` (
 -- Table structure for table `pma_column_info`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_column_info` (
-`id` int(5) unsigned NOT NULL,
+CREATE TABLE `pma_column_info` (
+  `id` int(5) UNSIGNED NOT NULL,
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `column_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -162,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `pma_column_info` (
   `mimetype` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
   `transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
   `transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin';
 
 --
 -- Dumping data for table `pma_column_info`
@@ -181,7 +138,7 @@ INSERT INTO `pma_column_info` (`id`, `db_name`, `table_name`, `column_name`, `co
 -- Table structure for table `pma_designer_coords`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_designer_coords` (
+CREATE TABLE `pma_designer_coords` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `x` int(11) DEFAULT NULL,
@@ -196,8 +153,8 @@ CREATE TABLE IF NOT EXISTS `pma_designer_coords` (
 -- Table structure for table `pma_history`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_history` (
-`id` bigint(20) unsigned NOT NULL,
+CREATE TABLE `pma_history` (
+  `id` bigint(20) UNSIGNED NOT NULL,
   `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -211,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `pma_history` (
 -- Table structure for table `pma_navigationhiding`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_navigationhiding` (
+CREATE TABLE `pma_navigationhiding` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `item_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `item_type` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -225,9 +182,9 @@ CREATE TABLE IF NOT EXISTS `pma_navigationhiding` (
 -- Table structure for table `pma_pdf_pages`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_pdf_pages` (
+CREATE TABLE `pma_pdf_pages` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-`page_nr` int(10) unsigned NOT NULL,
+  `page_nr` int(10) UNSIGNED NOT NULL,
   `page_descr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin';
 
@@ -237,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `pma_pdf_pages` (
 -- Table structure for table `pma_recent`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_recent` (
+CREATE TABLE `pma_recent` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `tables` text COLLATE utf8_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
@@ -255,7 +212,7 @@ INSERT INTO `pma_recent` (`username`, `tables`) VALUES
 -- Table structure for table `pma_relation`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_relation` (
+CREATE TABLE `pma_relation` (
   `master_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `master_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `master_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -270,8 +227,8 @@ CREATE TABLE IF NOT EXISTS `pma_relation` (
 -- Table structure for table `pma_savedsearches`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_savedsearches` (
-`id` int(5) unsigned NOT NULL,
+CREATE TABLE `pma_savedsearches` (
+  `id` int(5) UNSIGNED NOT NULL,
   `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `search_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -284,12 +241,12 @@ CREATE TABLE IF NOT EXISTS `pma_savedsearches` (
 -- Table structure for table `pma_table_coords`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_table_coords` (
+CREATE TABLE `pma_table_coords` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `pdf_page_number` int(11) NOT NULL DEFAULT '0',
-  `x` float unsigned NOT NULL DEFAULT '0',
-  `y` float unsigned NOT NULL DEFAULT '0'
+  `x` float UNSIGNED NOT NULL DEFAULT '0',
+  `y` float UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
 
 -- --------------------------------------------------------
@@ -298,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `pma_table_coords` (
 -- Table structure for table `pma_table_info`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_table_info` (
+CREATE TABLE `pma_table_info` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `display_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
@@ -310,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `pma_table_info` (
 -- Table structure for table `pma_table_uiprefs`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_table_uiprefs` (
+CREATE TABLE `pma_table_uiprefs` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -324,18 +281,18 @@ CREATE TABLE IF NOT EXISTS `pma_table_uiprefs` (
 -- Table structure for table `pma_tracking`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_tracking` (
+CREATE TABLE `pma_tracking` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `version` int(10) unsigned NOT NULL,
+  `version` int(10) UNSIGNED NOT NULL,
   `date_created` datetime NOT NULL,
   `date_updated` datetime NOT NULL,
   `schema_snapshot` text COLLATE utf8_bin NOT NULL,
   `schema_sql` text COLLATE utf8_bin,
   `data_sql` longtext COLLATE utf8_bin,
   `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') COLLATE utf8_bin DEFAULT NULL,
-  `tracking_active` int(1) unsigned NOT NULL DEFAULT '1'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT COMMENT='Database changes tracking for phpMyAdmin';
+  `tracking_active` int(1) UNSIGNED NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Database changes tracking for phpMyAdmin' ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -343,7 +300,7 @@ CREATE TABLE IF NOT EXISTS `pma_tracking` (
 -- Table structure for table `pma_userconfig`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_userconfig` (
+CREATE TABLE `pma_userconfig` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `config_data` text COLLATE utf8_bin NOT NULL
@@ -362,7 +319,7 @@ INSERT INTO `pma_userconfig` (`username`, `timevalue`, `config_data`) VALUES
 -- Table structure for table `pma_usergroups`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_usergroups` (
+CREATE TABLE `pma_usergroups` (
   `usergroup` varchar(64) COLLATE utf8_bin NOT NULL,
   `tab` varchar(64) COLLATE utf8_bin NOT NULL,
   `allowed` enum('Y','N') COLLATE utf8_bin NOT NULL DEFAULT 'N'
@@ -374,145 +331,28 @@ CREATE TABLE IF NOT EXISTS `pma_usergroups` (
 -- Table structure for table `pma_users`
 --
 
-CREATE TABLE IF NOT EXISTS `pma_users` (
+CREATE TABLE `pma_users` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `usergroup` varchar(64) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
 
---
--- Indexes for dumped tables
---
+-- --------------------------------------------------------
 
 --
--- Indexes for table `pma_bookmark`
---
-ALTER TABLE `pma_bookmark`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `pma_column_info`
---
-ALTER TABLE `pma_column_info`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
-
---
--- Indexes for table `pma_designer_coords`
---
-ALTER TABLE `pma_designer_coords`
- ADD PRIMARY KEY (`db_name`,`table_name`);
-
---
--- Indexes for table `pma_history`
---
-ALTER TABLE `pma_history`
- ADD PRIMARY KEY (`id`), ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
-
---
--- Indexes for table `pma_navigationhiding`
---
-ALTER TABLE `pma_navigationhiding`
- ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
-
---
--- Indexes for table `pma_pdf_pages`
---
-ALTER TABLE `pma_pdf_pages`
- ADD PRIMARY KEY (`page_nr`), ADD KEY `db_name` (`db_name`);
-
---
--- Indexes for table `pma_recent`
---
-ALTER TABLE `pma_recent`
- ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma_relation`
---
-ALTER TABLE `pma_relation`
- ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`), ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
-
---
--- Indexes for table `pma_savedsearches`
---
-ALTER TABLE `pma_savedsearches`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
-
---
--- Indexes for table `pma_table_coords`
---
-ALTER TABLE `pma_table_coords`
- ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
-
---
--- Indexes for table `pma_table_info`
---
-ALTER TABLE `pma_table_info`
- ADD PRIMARY KEY (`db_name`,`table_name`);
-
---
--- Indexes for table `pma_table_uiprefs`
---
-ALTER TABLE `pma_table_uiprefs`
- ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
-
---
--- Indexes for table `pma_tracking`
---
-ALTER TABLE `pma_tracking`
- ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
-
---
--- Indexes for table `pma_userconfig`
---
-ALTER TABLE `pma_userconfig`
- ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma_usergroups`
---
-ALTER TABLE `pma_usergroups`
- ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
-
---
--- Indexes for table `pma_users`
---
-ALTER TABLE `pma_users`
- ADD PRIMARY KEY (`username`,`usergroup`);
-
---
--- AUTO_INCREMENT for dumped tables
+-- Table structure for table `user`
 --
 
+CREATE TABLE `user` (
+  `Username` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
--- AUTO_INCREMENT for table `pma_bookmark`
+-- Dumping data for table `user`
 --
-ALTER TABLE `pma_bookmark`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `pma_column_info`
---
-ALTER TABLE `pma_column_info`
-MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `pma_history`
---
-ALTER TABLE `pma_history`
-MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `pma_pdf_pages`
---
-ALTER TABLE `pma_pdf_pages`
-MODIFY `page_nr` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `pma_savedsearches`
---
-ALTER TABLE `pma_savedsearches`
-MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT;--
--- Database: `test`
---
---
--- Database: `webauth`
---
+
+INSERT INTO `user` (`Username`, `Password`) VALUES
+('Admin', 'Admin@123');
 
 -- --------------------------------------------------------
 
@@ -520,7 +360,7 @@ MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT;--
 -- Table structure for table `user_pwd`
 --
 
-CREATE TABLE IF NOT EXISTS `user_pwd` (
+CREATE TABLE `user_pwd` (
   `name` char(30) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `pass` char(32) COLLATE latin1_general_ci NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
@@ -537,11 +377,181 @@ INSERT INTO `user_pwd` (`name`, `pass`) VALUES
 --
 
 --
+-- Indexes for table `ad`
+--
+ALTER TABLE `ad`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `MAC` (`MAC`);
+
+--
+-- Indexes for table `cds`
+--
+ALTER TABLE `cds`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pma_bookmark`
+--
+ALTER TABLE `pma_bookmark`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pma_column_info`
+--
+ALTER TABLE `pma_column_info`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
+
+--
+-- Indexes for table `pma_designer_coords`
+--
+ALTER TABLE `pma_designer_coords`
+  ADD PRIMARY KEY (`db_name`,`table_name`);
+
+--
+-- Indexes for table `pma_history`
+--
+ALTER TABLE `pma_history`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
+
+--
+-- Indexes for table `pma_navigationhiding`
+--
+ALTER TABLE `pma_navigationhiding`
+  ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
+
+--
+-- Indexes for table `pma_pdf_pages`
+--
+ALTER TABLE `pma_pdf_pages`
+  ADD PRIMARY KEY (`page_nr`),
+  ADD KEY `db_name` (`db_name`);
+
+--
+-- Indexes for table `pma_recent`
+--
+ALTER TABLE `pma_recent`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `pma_relation`
+--
+ALTER TABLE `pma_relation`
+  ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`),
+  ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
+
+--
+-- Indexes for table `pma_savedsearches`
+--
+ALTER TABLE `pma_savedsearches`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
+
+--
+-- Indexes for table `pma_table_coords`
+--
+ALTER TABLE `pma_table_coords`
+  ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
+
+--
+-- Indexes for table `pma_table_info`
+--
+ALTER TABLE `pma_table_info`
+  ADD PRIMARY KEY (`db_name`,`table_name`);
+
+--
+-- Indexes for table `pma_table_uiprefs`
+--
+ALTER TABLE `pma_table_uiprefs`
+  ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
+
+--
+-- Indexes for table `pma_tracking`
+--
+ALTER TABLE `pma_tracking`
+  ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
+
+--
+-- Indexes for table `pma_userconfig`
+--
+ALTER TABLE `pma_userconfig`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `pma_usergroups`
+--
+ALTER TABLE `pma_usergroups`
+  ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
+
+--
+-- Indexes for table `pma_users`
+--
+ALTER TABLE `pma_users`
+  ADD PRIMARY KEY (`username`,`usergroup`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`Username`);
+
+--
 -- Indexes for table `user_pwd`
 --
 ALTER TABLE `user_pwd`
- ADD PRIMARY KEY (`name`);
+  ADD PRIMARY KEY (`name`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ad`
+--
+ALTER TABLE `ad`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `cds`
+--
+ALTER TABLE `cds`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `pma_bookmark`
+--
+ALTER TABLE `pma_bookmark`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `pma_column_info`
+--
+ALTER TABLE `pma_column_info`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `pma_history`
+--
+ALTER TABLE `pma_history`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `pma_pdf_pages`
+--
+ALTER TABLE `pma_pdf_pages`
+  MODIFY `page_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `pma_savedsearches`
+--
+ALTER TABLE `pma_savedsearches`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
