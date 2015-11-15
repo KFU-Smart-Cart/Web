@@ -20,3 +20,8 @@ echo json_encode($AdData);
 
 //close the db connection
 mysqli_close($con);
+
+?>
+
+
+
