@@ -27,9 +27,12 @@ $result = mysql_query($query);
 
 $rows = mysql_num_rows($result);
 
-		if($rows==1)
+
+    if($rows==1)
 		{
-			$_SESSION['login_user']=$username;
+            session_start();
+            $_SESSION['login_user']="Admin";
+
 			header('Location: Login.php?results=success');
 		}
             
