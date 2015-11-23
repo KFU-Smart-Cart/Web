@@ -7,6 +7,7 @@ if(!isset($_SESSION['login_user'])){$_SESSION['login_user']="";}
 if(isset($_POST['CreateESubmit'])){
 	
 		//Taking Values from the Form
+
 	$MAC = $_POST['MAC'];
 	$BeaconName = $_POST['BeaconName'];
 	$UUID = $_POST['UUID'];
@@ -14,12 +15,13 @@ if(isset($_POST['CreateESubmit'])){
 	$Minor = $_POST['Minor'];
 	
 		//STEP 4: CREATE THE QUERY
-		
+
 		//Inserting Beacon Info
 	$query4 = "Insert into Beacon(BeaconName,UUID,Major,Minor,MacAddress) values ('$BeaconName','$UUID','$Major','$Minor','$MAC')";
 
 		//STEP 5: RUN THE QUERY
 	$result2 = mysqli_query($con, $query4);
+
 		
 
 
