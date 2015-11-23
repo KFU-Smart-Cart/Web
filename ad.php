@@ -8,15 +8,15 @@
 
 include "connect-db.php";
 
-//$sql = "select * from ad";
-
 $sql = "SELECT *
          FROM notification, beacon
          WHERE notification.BeaconID = beacon.BeaconID";
 $result = mysqli_query($con, $sql) or die("Error in Selecting " . mysqli_error($con));
 
+
 //create an array
 $AdData = array();
+
 while ($row = mysqli_fetch_assoc($result)) {
     $AdData[] = $row;
 }
