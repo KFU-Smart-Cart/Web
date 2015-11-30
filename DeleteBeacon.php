@@ -9,7 +9,7 @@
 $Title = "Delete Offer";
 include('Header.php');
 include('connect-db.php');
-
+if(isset($_GET['id'])) //To Avoid Error if You Visit This Page Directly
 $ID = $_GET['ID'];
 
 $query7 = "delete from beacon where BeaconID='$ID'";

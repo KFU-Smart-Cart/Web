@@ -36,7 +36,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <h1 id="PastEventsHeader">Carts</h1>
         <ul id="CurrentEventList">
             <?php foreach ($cart as $i) { ?>
-                <li class="EventInfo">[Cart ID: <?php echo $i['ID']; ?> ] <a href="DeleteCart.php?ID=<?php echo $i['ID']; ?>">(Delete?)</a></li>
+                <li class="EventInfo">[Cart ID: <?php echo $i['ID']; ?> ]  <a href="EditCart.php?ID=<?php echo $i['ID']; ?>">(Edit?)</a> <a href="DeleteCart.php?ID=<?php echo $i['ID']; ?>">(Delete?)</a></li>
             <?php } ?>
         </ul>
     </div>
