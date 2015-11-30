@@ -1,26 +1,27 @@
 <?php
 include('connect-db.php');
-$Title = "Add Cart";
+$Title = "Edit Cart";
 include('Header.php');
-if(isset($_GET['id'])) //To Avoid Error if You Visit This Page Directly
+
+if(isset($_GET['ID'])) //To Avoid Error if You Visit This Page Directly
 $ID = $_GET['ID'];
+
 if(!isset($_SESSION['login_user'])){$_SESSION['login_user']="";}
 if(isset($_POST['CreateESubmit'])){
-    $Status = 'InActive';
 //Taking Values from the Form
     $MAC = $_POST['MAC'];
-    $IDD=$_POST['hidden'];
+    $IDD=$_POST['hidden1'];
     //STEP 4: CREATE THE QUERY
 
     //Inserting Cart Info
-    $query4 = "update cart set MAC='$MAC' where ID='$IDD'";
+    $query44 = "UPDATE cart SET MAC='$MAC' WHERE ID='$IDD'";
 
     //STEP 5: RUN THE QUERY
-    $result2 = mysqli_query($con, $query4);
+    $result30 = mysqli_query($con, $query44);
 
 
 
-    if($result2==1)
+    if($result30==1)
     {
         header('Location: EditCart.php?results=success');
     }
@@ -47,8 +48,7 @@ if(isset($_POST['CreateESubmit'])){
 
             <label for="MAC">MAC Address*:</label>
             <input type="text" name="MAC" />
-
-            <input type="hidden" value="<?php echo $ID //To Store ID :))?>" name="hidden" />
+            <input type="hidden" value="<?php echo $ID;?>" name="hidden1" />
 
             <input type="submit" class="CustomButtonA" name="CreateESubmit" id="CreateESubmit" onclick="validate();" value="Submit" />
 

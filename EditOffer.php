@@ -1,8 +1,8 @@
 <?php
-$Title = "Add Offer";
+$Title = "Edit Offer";
 include('Header.php');
 include('connect-db.php');
-if(isset($_GET['id'])) //To Avoid Error if You Visit This Page Directly
+if(isset($_GET['ID'])) //To Avoid Error if You Visit This Page Directly
 $ID = $_GET['ID'];
 if(!isset($_SESSION['login_user'])){$_SESSION['login_user']="";}
 
@@ -14,9 +14,6 @@ if(isset($_POST['CreateESubmit'])){
     $IDD=$_POST['hidden'];
     $OfferName = $_POST['OfferName'];
     $OfferDescription = $_POST['OfferDescription'];
-
-
-    //STEP 4: CREATE THE QUERY
 
 
 
@@ -71,9 +68,8 @@ if(isset($_POST['CreateESubmit'])){
                     <td><label for="OfferDescription">Offer Description*</label></td>
                     <td><input type="text" name="OfferDescription" /></td>
                 </tr>
-                <td><label for="OfferDescription"><?php echo $ID ?></label></td>
             </table>
-            <input type="hidden" value="<?php echo $ID ?>" name="hidden" />
+            <input type="hidden" value="<?php echo $ID; ?>" name="hidden" />
 
             <input type="submit" class="CustomButtonA" name="CreateESubmit" id="CreateESubmit" onclick="validate();" value="Submit" />
 

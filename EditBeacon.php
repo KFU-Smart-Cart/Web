@@ -1,16 +1,17 @@
 <?php
-$Title = "AddBeacon";
+$Title = "Edit Beacon";
 include('Header.php');
 include('connect-db.php');
-if(isset($_GET['id'])) //To Avoid Error if You Visit This Page Directly
+if(isset($_GET['ID'])) //To Avoid Error if You Visit This Page Directly
 $ID = $_GET['ID'];
-
 if(!isset($_SESSION['login_user'])){$_SESSION['login_user']="";}
+
+
 if(isset($_POST['CreateESubmit'])){
 
     //Taking Values from the Form
 
-    $IDD=$_POST['hidden'];
+    $IDD=$_POST['hidden1'];
     $MAC = $_POST['MAC'];
     $BeaconName = $_POST['BeaconName'];
     $UUID = $_POST['UUID'];
@@ -19,16 +20,16 @@ if(isset($_POST['CreateESubmit'])){
 
     //STEP 4: CREATE THE QUERY
 
-    //Inserting Beacon Info
-    $query4 = "update Beacon(BeaconName,UUID,Major,Minor,MacAddress) values ('$BeaconName','$UUID','$Major','$Minor','$MAC') where BeaconID='$IDD'";
+    //|Update Beacon Info
+    $query40 = "UPDATE beacon SET BeaconName='$BeaconName', UUID='$UUID' Major='$Major', Minor='$Minor', MacAddress='$MAC' WHERE BeaconID='$IDD'";
 
     //STEP 5: RUN THE QUERY
-    $result2 = mysqli_query($con, $query4);
+    $result20 = mysqli_query($con, $query40);
 
 
 
 
-    if($result2==1)
+    if($result20==1)
     {
         header('Location: EditBeacon.php?results=success');
     }
@@ -86,7 +87,7 @@ if(isset($_POST['CreateESubmit'])){
 
             </table>
 
-            <input type="hidden" value="<?php echo $ID //To Store ID :))?>" name="hidden" />
+            <input type="hidden" value="<?php echo $ID; ?>" name="hidden1" />
 
             <input type="submit" class="CustomButtonA" name="CreateESubmit" id="CreateESubmit" onclick="validate();" value="Submit" />
 
