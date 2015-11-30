@@ -12,7 +12,7 @@
       <div id="Wrapper">
     <div id="Header">
         <div id="LogoDIV">  
-        <a id="LogoA" href="Login.php"><img src="Images/logo.png" id="Logo" alt="Logo" />
+        <a id="LogoA" href="index.php"><img src="Images/logo.png" id="Logo" alt="Logo" />
             <p id="WebSiteName">Admin Panel</p>
             </a>
             

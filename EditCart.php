@@ -14,14 +14,14 @@ if(isset($_POST['CreateESubmit'])){
     //STEP 4: CREATE THE QUERY
 
     //Inserting Cart Info
-    $query44 = "UPDATE cart SET MAC='$MAC' WHERE ID='$IDD'";
+    $query = "UPDATE cart SET MAC='$MAC' WHERE ID='$IDD'";
 
     //STEP 5: RUN THE QUERY
-    $result30 = mysqli_query($con, $query44);
+    $result = mysqli_query($con, $query);
 
 
 
-    if($result30==1)
+    if($result==1)
     {
         header('Location: EditCart.php?results=success');
     }

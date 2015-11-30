@@ -21,15 +21,15 @@ if(isset($_POST['CreateESubmit'])){
     //STEP 4: CREATE THE QUERY
 
     //|Update Beacon Info
-    $query40 = "UPDATE beacon SET BeaconName='$BeaconName', UUID='$UUID' Major='$Major', Minor='$Minor', MacAddress='$MAC' WHERE BeaconID='$IDD'";
+    $query = "UPDATE beacon SET BeaconName='$BeaconName', UUID='$UUID', Major='$Major', Minor='$Minor', MacAddress='$MAC' WHERE BeaconID='$IDD'";
 
     //STEP 5: RUN THE QUERY
-    $result20 = mysqli_query($con, $query40);
+    $result = mysqli_query($con, $query);
 
 
 
 
-    if($result20==1)
+    if($result==1)
     {
         header('Location: EditBeacon.php?results=success');
     }
