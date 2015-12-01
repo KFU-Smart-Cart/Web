@@ -36,7 +36,7 @@ while ($row = mysqli_fetch_assoc($result2)) {
         <h1 id="PastEventsHeader">Active Carts</h1>
         <ul id="CurrentEventList">
             <?php foreach ($cart as $i) { ?>
-                <li class="EventInfo"><a href="#">[Cart ID: <?php echo $i['ID']; ?>]</a></li>
+                <li class="EventInfo"><label>[Cart ID: <?php echo $i['ID']; ?>]</label></li>
             <?php } ?>
         </ul>
     </div>
@@ -45,7 +45,7 @@ while ($row = mysqli_fetch_assoc($result2)) {
         <h1 id="PastEventsHeader">InActive Carts</h1>
         <ul id="CurrentEventList">
             <?php foreach ($cart2 as $i) { ?>
-                <li class="EventInfo"><a href="#">[Cart ID: <?php echo $i['ID']; ?>]</a></li>
+                <li class="EventInfo"><label>[Cart ID: <?php echo $i['ID']; ?>]</label></li>
             <?php } ?>
         </ul>
     </div>
