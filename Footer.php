@@ -5,12 +5,15 @@
                   <li><a href="index.php" class="FooterA">Panel</a></li>
                   <li><a href="AddCart.php" class="FooterA">Add Cart</a></li>
 				  <li><a href="AddOffer.php" class="FooterA">Add Offer</a></li>
+                  <li><a href="Carts.php" class="FooterA">Carts</a></li>
                   </ul>
               </div>
               <div id="set2">
                 <ul>
-<li><a href="Login.php" class="FooterA">Login</a></li>
-<li><a href="AddBeacon.php" class="FooterA">Add Beacon</a></li>
+                    <li><a href="Login.php" class="FooterA">Login</a></li>
+                    <li><a href="AddBeacon.php" class="FooterA">Add Beacon</a></li>
+                    <li><a href="Offers.php" class="FooterA">Offers</a></li>
+                    <li><a href="Beacons.php" class="FooterA">Beacons</a></li>
                   </ul>
               </div>
               

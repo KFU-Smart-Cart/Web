@@ -1,5 +1,5 @@
 <?php
-$Title = "AddBeacon";
+$Title = "Add Beacon";
 include('Header.php');
 include('connect-db.php');
 
