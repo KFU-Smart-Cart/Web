@@ -7,8 +7,8 @@
  */
 include('connect-db.php');
 
-$Status = $_POST['Status'];
-$ID = $_POST['ID'];
+$Status = $_GET['Status'];
+$ID = $_GET['ID'];
 
 $query9 = "UPDATE cart set Status='$Status' WHERE ID='$ID'";
 $result9 = mysqli_query($con, $query9);
