@@ -6,7 +6,7 @@ if(!isset($_SESSION['login_user'])){$_SESSION['login_user']="";}
 if(isset($_POST['CreateESubmit'])){
 $Status = 'InActive';
 //Taking Values from the Form
-$MAC = $_POST['MAC'];
+$MAC = strtoupper($_POST['MAC']);
 	
 		//STEP 4: CREATE THE QUERY
 		
