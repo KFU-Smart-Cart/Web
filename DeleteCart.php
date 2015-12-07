@@ -21,7 +21,7 @@ $result7 = mysqli_query($con, $query7);
 
 
 
-    <h1 class="Status">Cart Deleted Successfully</h1>
+    <div id="CreateEEventInfo2"><h2 class="Status">Cart Deleted Successfully</h2></div>
 
 
 

@@ -64,9 +64,9 @@ if(isset($_POST['CreateESubmit'])){
 
 
 	<?php if(isset($_GET['results']) && $_GET['results']==='success') {?>
-    <h1 class="Status">Offer added Succesfully</h1>
+    <div id="CreateEEventInfo2"><h2 class="Status">Offer Added Successfully</h2></div>
     <?php } else if(isset($_GET['results']) && $_GET['results']==='failure') {?>
-    <h1 class="Status">Oops! There was a problem.</h1>
+    <div id="CreateEEventInfo2"><h2 class="Status">Oops! There was a problem.</h2></div>
      <?php } else if($_SESSION['login_user']!="Admin"){ ?>
      	          <div id="NotAuthorizedPanelDIV">
 		<h1 class="Status" id="NotAuthorizedPanel">You Are not Authorized!</h1>
