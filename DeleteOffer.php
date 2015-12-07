@@ -21,7 +21,7 @@ $ID = $_GET['ID'];
 
 
 
-    <h1 class="Status">Offer Deleted Successfully</h1>
+    <div id="CreateEEventInfo2"><h2 class="Status">Offer Deleted Successfully</h2></div>
 
 
 

@@ -22,7 +22,7 @@ $result8 = mysqli_query($con, $query8);
 
 
 
-    <h1 class="Status">Beacon Deleted Successfully</h1>
+    <div id="CreateEEventInfo2"><h2 class="Status">Beacon Deleted Successfully</h2></div>
 
 
 
